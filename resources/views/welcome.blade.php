@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+@extends('admin.template.main')
+
+@section('content')
+    
+@endsection
+
+<!--<!DOCTYPE html>
 <html>
     <head>
         <title>Laravel</title>
@@ -38,8 +44,11 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">Laravel 5.1</div>
             </div>
         </div>
     </body>
 </html>
+-->
+
+
