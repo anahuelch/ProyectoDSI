@@ -17,7 +17,11 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin'], function(){
 
-	Route::resource('/instituciones','InstitucionesController');
-
+	Route::resource('instituciones','InstitucionesController');
+	
+	Route::get('instituciones/{id}/destroy', [
+		'uses' => 'InstitucionesController@destroy',
+		'as' => 'admin.instituciones.destroy'
+	]);
 });
 
