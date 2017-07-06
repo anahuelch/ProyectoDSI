@@ -25,3 +25,14 @@ Route::group(['prefix' => 'admin'], function(){
 	]);
 });
 
+Route::group(['prefix' => 'admin'], function(){
+
+	Route::resource('tipos','TiposController');
+	
+	Route::get('tipos/{id}/destroy', [
+		'uses' => 'TiposController@destroy',
+		'as' => 'admin.tipos.destroy'
+	]);
+});
+
+
