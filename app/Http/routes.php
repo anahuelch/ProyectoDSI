@@ -35,3 +35,13 @@ Route::group(['prefix' => 'admin'], function(){
 	]);
 });
 
+Route::group(['prefix' => 'admin'], function(){
+
+	Route::resource('estados','EstadosController');
+	
+	Route::get('estados/{id}/destroy', [
+		'uses' => 'EstadosController@destroy',
+		'as' => 'admin.estados.destroy'
+	]);
+});
+
