@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Institucion;
+use Laracasts\Flash\Flash;
 
 class InstitucionesController extends Controller
 {
@@ -16,7 +18,8 @@ class InstitucionesController extends Controller
      */
     public function index()
     {
-        //
+        $instituciones = Institucion::orderBy('id','DESC')->paginate(15);
+        return view('admin.instituciones.index')->with('instituciones',$instituciones);
     }
 
     /**
@@ -37,7 +40,12 @@ class InstitucionesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $instituciones = new Institucion($request->all());
+        $instituciones->save();
+
+        Flash::success("Se ha registrado la Institución " .$instituciones->nombre_institucion. " de manera Exitosa.");
+        
+        return redirect()->route('admin.instituciones.index');
     }
 
     /**
@@ -59,7 +67,8 @@ class InstitucionesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $institucion = Institucion::find($id);
+        return view('admin.instituciones.edit')->with('institucion',$institucion);
     }
 
     /**
@@ -71,7 +80,16 @@ class InstitucionesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $institucion = Institucion::find($id);
+        $institucion->nombre_institucion = $request->nombre_institucion;
+        $institucion->pais_institucion = $request->pais_institucion;
+        $institucion->direccion_institucion = $request->direccion_institucion;
+        $institucion->fono_institucion = $request->fono_institucion;
+        $institucion->descripcion_institucion = $request->descripcion_institucion;
+        $institucion->save();
+
+        Flash::warning('La institucion '.$institucion->nombre_institucion.' se hamodificado con exito.');
+        return redirect()->route('admin.instituciones.index');
     }
 
     /**
@@ -82,6 +100,10 @@ class InstitucionesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $institucion = Institucion::find($id);
+        $institucion->delete();
+
+        Flash::error('Se eliminó '.$institucion->nombre_institucion.' de forma exitosa.');
+        return redirect()->route('admin.instituciones.index');
     }
 }
