@@ -1,9 +1,9 @@
 @extends('admin.template.main')
 
 @section('content')
-	<h1 align="center">Listado de Instituciones</h1>
+	<h1 align="center">Listado de Tipos de Convenio</h1>
 	<br>
-	<a href="{{ url('/admin/tipos/create') }}" class="btn btn-success btn-block">Registrar nueva Institución</a>
+	<a href="{{ url('/admin/tipos/create') }}" class="btn btn-success btn-block">Registrar nuevo tipo de convenio</a>
 	<br>
 	@include('flash::message')
 	<table class="table">

@@ -35,4 +35,14 @@ Route::group(['prefix' => 'admin'], function(){
 	]);
 });
 
+Route::group(['prefix' => 'admin'], function(){
+
+	Route::resource('convenios','ConveniosController');
+	
+	Route::get('convenios/{id}/destroy', [
+		'uses' => 'ConveniosController@destroy',
+		'as' => 'admin.convenios.destroy'
+	]);
+});
+
 

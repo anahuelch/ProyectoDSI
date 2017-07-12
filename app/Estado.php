@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Convenio;
 
 class Estado extends Model
 {
@@ -11,6 +12,6 @@ class Estado extends Model
     protected $fillable = ['id', 'estado'];
 
     public function convenios(){
-    	return $this->hasMany('App\Convenio');
+    	return $this->hasMany('App\Convenio','id', 'id');
     }
 }
