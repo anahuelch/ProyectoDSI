@@ -23,6 +23,18 @@ Route::group(['prefix' => 'admin'], function(){
 		'uses' => 'InstitucionesController@destroy',
 		'as' => 'admin.instituciones.destroy'
 	]);
+
+});
+
+Route::group(['prefix' => 'admin'], function(){
+
+	Route::resource('actividades','ActividadesController'); // Relaciona la ruta con todos los métodos del controlador
+	
+	Route::get('actividades/{id}/destroy', [
+		'uses' => 'ActividadesController@destroy',
+		'as' => 'admin.actividades.destroy'
+	]);
+});
 });
 
 Route::group(['prefix' => 'admin'], function(){
