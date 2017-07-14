@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Convenio;
 
 class Institucion extends Model
 {
@@ -11,6 +12,6 @@ class Institucion extends Model
     protected $fillable = ['id', 'nombre_institucion', 'pais_institucion', 'direccion_institucion', 'fono_institucion', 'descripcion_institucion'];
 
     public function convenios(){
-    	return $this->belongsToMany('App\Convenio')->withTimestamps();
+    	return $this->belongsToMany('App\Convenio', 'id', 'id')->withTimestamps();
     }
 }
