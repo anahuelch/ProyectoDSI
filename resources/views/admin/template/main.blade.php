@@ -19,10 +19,19 @@
 							  <a href="#" class="list-group-item active">
 							    Gestión de Convenios
 							  </a>
+
+							  <a href="{{url('/admin/instituciones/')}}" class="list-group-item">Instituciones</a>
+							  <a href="#" class="list-group-item">Convenios</a>
+							  <a href="#" class="list-group-item">Coordinadores</a>
+							  <a href="#" class="list-group-item">Actividades</a>
+							  <a href="{{url('/admin/estados/')}}" class="list-group-item">Estados</a>
+							  <a href="{{url('/admin/areas/')}}" class="list-group-item">Areas</a>
+
 							  <a href="#" class="list-group-item">Instituciones</a>
 							  <a href="#" class="list-group-item">Convenios</a>
 							  <a href="#" class="list-group-item">Coordinadores</a>
 							  <a href="#" class="list-group-item">Actividades</a>
+
 							</div>
 					</div>
 				</div>

@@ -28,6 +28,27 @@ Route::group(['prefix' => 'admin'], function(){
 
 Route::group(['prefix' => 'admin'], function(){
 
+	Route::resource('areas','AreasController');
+	
+	Route::get('areas/{id}/destroy', [
+		'uses' => 'AreasController@destroy',
+		'as' => 'admin.areas.destroy'
+	]);
+});
+
+Route::group(['prefix' => 'admin'], function(){
+
+
+	Route::resource('estados','EstadosController');
+	
+	Route::get('estados/{id}/destroy', [
+		'uses' => 'EstadosController@destroy',
+		'as' => 'admin.estados.destroy'
+	]);
+});
+
+Route::group(['prefix' => 'admin'], function(){
+
 	Route::resource('actividades','ActividadesController'); // Relaciona la ruta con todos los métodos del controlador
 	
 	Route::get('actividades/{id}/destroy', [
