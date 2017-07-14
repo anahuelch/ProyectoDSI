@@ -23,6 +23,7 @@ Route::group(['prefix' => 'admin'], function(){
 		'uses' => 'InstitucionesController@destroy',
 		'as' => 'admin.instituciones.destroy'
 	]);
+
 });
 
 Route::group(['prefix' => 'admin'], function(){
@@ -34,3 +35,26 @@ Route::group(['prefix' => 'admin'], function(){
 		'as' => 'admin.actividades.destroy'
 	]);
 });
+});
+
+Route::group(['prefix' => 'admin'], function(){
+
+	Route::resource('tipos','TiposController');
+	
+	Route::get('tipos/{id}/destroy', [
+		'uses' => 'TiposController@destroy',
+		'as' => 'admin.tipos.destroy'
+	]);
+});
+
+Route::group(['prefix' => 'admin'], function(){
+
+	Route::resource('convenios','ConveniosController');
+	
+	Route::get('convenios/{id}/destroy', [
+		'uses' => 'ConveniosController@destroy',
+		'as' => 'admin.convenios.destroy'
+	]);
+});
+
+

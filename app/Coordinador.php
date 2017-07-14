@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Convenio;
 
 class Coordinador extends Model
 {
@@ -11,6 +12,6 @@ class Coordinador extends Model
     protected $fillable = ['id','rut_coordinador','nombre_coordinador','sexo_coordinador','fono_coordinador','correo_coordinador'];
 
     public function convenios(){
-    	return $this->hasMany('App\Convenio');
+    	return $this->hasMany('App\Convenio','id');
     }
 }

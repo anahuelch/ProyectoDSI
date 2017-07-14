@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Convenio;
 
 class Area extends Model
 {
@@ -11,6 +12,6 @@ class Area extends Model
     protected $fillable = ['id', 'nombre_area','descripcion_area'];
 
     public function convenios(){
-    	return $this->hasMany('App\Convenio');
+    	return $this->hasMany('App\Convenio', 'id', 'id');
     }
 }
