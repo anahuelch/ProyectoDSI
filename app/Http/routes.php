@@ -19,6 +19,7 @@ Route::group(['prefix' => 'admin'], function(){
 
 	Route::resource('instituciones','InstitucionesController');
 
+
 	Route::resource('objetivos','ObjetivosController');
 
 
@@ -27,6 +28,7 @@ Route::group(['prefix' => 'admin'], function(){
 		'uses' => 'InstitucionesController@destroy',
 		'as' => 'admin.instituciones.destroy'
 	]);
+
 
 
 		Route::get('objetivos/{id}/destroy', [
@@ -40,6 +42,14 @@ Route::group(['prefix' => 'admin'], function(){
 });
 
 Route::group(['prefix' => 'admin'], function(){
+
+	Route::resource('coordinadores','CoordinadoresController');
+	
+	Route::get('coordinadores/{id}/destroy', [
+		'uses' => 'CoordinadoresController@destroy',
+		'as' => 'admin.coordinadores.destroy'
+	]);
+});
 
 	Route::resource('areas','AreasController');
 	
@@ -90,5 +100,6 @@ Route::group(['prefix' => 'admin'], function(){
 		'as' => 'admin.convenios.destroy'
 	]);
 });
+
 
 

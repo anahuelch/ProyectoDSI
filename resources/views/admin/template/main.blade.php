@@ -21,6 +21,7 @@
 							  </a>
 
 
+
 							  <a href="{{url('/admin/instituciones/')}}" class="list-group-item">Instituciones</a>
 							  <a href="#" class="list-group-item">Convenios</a>
 							  <a href="#" class="list-group-item">Coordinadores</a>
